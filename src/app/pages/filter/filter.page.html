@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="search-chef" color="light">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Apply Filters</ion-title>
+    <ion-title slot="end">Reset</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="upperBox">
+    <h3>Meal Type</h3>
+
+    <ion-list>
+      <ion-radio-group>
+        <ion-item>
+          <ion-label>Breakfast</ion-label>
+          <ion-radio value="breakfast"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Dinner</ion-label>
+          <ion-radio value="dinner"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Lunch</ion-label>
+          <ion-radio value="lunch"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Brunch</ion-label>
+          <ion-radio value="brunch"></ion-radio>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-label>Others</ion-label>
+          <ion-radio value="others"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+  </div>
+</ion-content>
