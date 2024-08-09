@@ -86,5 +86,19 @@
     </ion-radio-group>
   </div>
 
-  <div class="upperBox"></div>
+  <div class="upperBox">
+    <h3>Distance</h3>
+    <ion-list lines="none">
+      <ion-item>
+        <ion-range
+          min="1"
+          max="20"
+          color="danger"
+          mode="ios"
+          [pin]="true"
+        ></ion-range>
+        <ion-label>1 Km</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>
