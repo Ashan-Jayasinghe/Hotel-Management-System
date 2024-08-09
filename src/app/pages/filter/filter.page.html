@@ -46,7 +46,10 @@
 
   <div class="upperBox">
     <h3>Cuisine</h3>
-    <ion-radio-group [value]="filters.cuisine">
+    <ion-radio-group
+      [value]="filters.cuisine"
+      (ionChange)="cuisineTypeChange($event)"
+    >
       <ion-row>
         <ion-col size="6">
           <ion-item>
@@ -100,6 +103,7 @@
           mode="ios"
           [pin]="true"
           [value]="filters.distance"
+          (ionChange)="distanceChange($event)"
         ></ion-range>
         <ion-label>1 Km</ion-label>
       </ion-item>
@@ -111,7 +115,10 @@
 
     <ion-list lines="none">
       <ion-item>
-        <ion-toggle mode="ios" [checked]="filters.popular"
+        <ion-toggle
+          mode="ios"
+          [checked]="filters.popular"
+          (ionChange)="popularChange($event)"
           >Most Popular</ion-toggle
         >
       </ion-item>
@@ -120,7 +127,10 @@
     </ion-list>
 
     <ion-list>
-      <ion-radio-group [value]="filters.priceByOrder">
+      <ion-radio-group
+        [value]="filters.priceByOrder"
+        (ionChange)="highLowChange($event)"
+      >
         <ion-item>
           <ion-radio mode="ios" value="lowToHigh">Low To High</ion-radio>
         </ion-item>
@@ -139,14 +149,17 @@
       <ion-item>
         <ion-range
           [value]="filters.price"
-          min="1"
+          (ionChange)="priceChange($event)"
+          min="100"
           dual-knobs="true"
-          max="20"
+          max="10000"
           color="primary"
           mode="ios"
           [pin]="true"
         ></ion-range>
-        <ion-label slot="end">1 to 5</ion-label>
+        <ion-label slot="end"
+          >Rs {{filters.price.lower}} to Rs {{filters.price.upper}}</ion-label
+        >
       </ion-item>
     </ion-list>
   </div>

@@ -12,7 +12,7 @@ export class FilterPage implements OnInit {
     distance: 5,
     popular: true,
     priceByOrder: 'highToLow',
-    price: { lower: 5, upper: 10 },
+    price: { lower: 500, upper: 5650 },
   };
   constructor() {}
 
@@ -22,5 +22,37 @@ export class FilterPage implements OnInit {
     console.log(ev.detail.value);
     const type = ev.detail.value;
     this.filters.meal_type = type;
+  }
+
+  cuisineTypeChange(ev: any) {
+    console.log(ev.detail.value);
+    const type = ev.detail.value;
+    this.filters.cuisine = type;
+  }
+
+  distanceChange(ev: any) {
+    console.log(ev.detail.value);
+    const type = ev.detail.value;
+    this.filters.distance = type;
+  }
+
+  popularChange(ev: any) {
+    console.log(ev.detail.checked);
+    const type = ev.detail.checked;
+    this.filters.distance = type;
+  }
+
+  highLowChange(ev: any) {
+    console.log(ev.detail.value);
+    const type = ev.detail.value;
+    this.filters.priceByOrder = type;
+  }
+
+  priceChange(ev: any) {
+    console.log(ev.detail.value);
+    const type = ev.detail.value;
+    this.filters.price.lower = type.lower;
+    this.filters.price.upper = type.upper;
+    console.log(this.filters.price);
   }
 }
