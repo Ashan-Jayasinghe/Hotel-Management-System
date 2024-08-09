@@ -125,4 +125,22 @@
       </ion-radio-group>
     </ion-list>
   </div>
+
+  <div class="upperBox">
+    <h3>Price</h3>
+
+    <ion-list lines="none">
+      <ion-item>
+        <ion-range
+          min="1"
+          dual-knobs="true"
+          max="20"
+          color="primary"
+          mode="ios"
+          [pin]="true"
+        ></ion-range>
+        <ion-label slot="end">1 to 5</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>
