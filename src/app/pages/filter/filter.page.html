@@ -5,7 +5,7 @@
       </ion-back-button>
     </ion-buttons>
     <ion-title>Apply Filters</ion-title>
-    <ion-title slot="end">Reset</ion-title>
+    <ion-title slot="end" (click)="reset()">Reset</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -97,8 +97,8 @@
     <ion-list lines="none">
       <ion-item>
         <ion-range
-          min="1"
-          max="20"
+          min="100 "
+          max="1000 "
           color="danger"
           mode="ios"
           [pin]="true"
@@ -165,6 +165,8 @@
   </div>
 
   <div class="upperBox">
-    <ion-button expand="block">Apply Filters</ion-button>
+    <ion-button expand="block" (click)="applyFilters()"
+      >Apply Filters</ion-button
+    >
   </div>
 </ion-content>

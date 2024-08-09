@@ -9,7 +9,7 @@ export class FilterPage implements OnInit {
   filters = {
     meal_type: 'lunch',
     cuisine: 'indian',
-    distance: 5,
+    distance: 500,
     popular: true,
     priceByOrder: 'highToLow',
     price: { lower: 500, upper: 5650 },
@@ -54,5 +54,19 @@ export class FilterPage implements OnInit {
     this.filters.price.lower = type.lower;
     this.filters.price.upper = type.upper;
     console.log(this.filters.price);
+  }
+
+  reset() {
+    this.filters = {
+      meal_type: 'lunch',
+      cuisine: 'indian',
+      distance: 500,
+      popular: true,
+      priceByOrder: 'highToLow',
+      price: { lower: 500, upper: 5650 },
+    };
+  }
+  applyFilters() {
+    console.log(this.filters);
   }
 }
