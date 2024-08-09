@@ -14,7 +14,10 @@
     <h3>Meal Type</h3>
 
     <ion-list>
-      <ion-radio-group>
+      <ion-radio-group
+        [value]="filters.meal_type"
+        (ionChange)="mealTypeChange($event)"
+      >
         <ion-item>
           <!-- <ion-label>Breakfast</ion-label> -->
           <ion-radio value="breakfast" label-placement="start"
@@ -43,7 +46,7 @@
 
   <div class="upperBox">
     <h3>Cuisine</h3>
-    <ion-radio-group>
+    <ion-radio-group [value]="filters.cuisine">
       <ion-row>
         <ion-col size="6">
           <ion-item>
@@ -96,6 +99,7 @@
           color="danger"
           mode="ios"
           [pin]="true"
+          [value]="filters.distance"
         ></ion-range>
         <ion-label>1 Km</ion-label>
       </ion-item>
@@ -107,14 +111,16 @@
 
     <ion-list lines="none">
       <ion-item>
-        <ion-toggle mode="ios">Most Popular</ion-toggle>
+        <ion-toggle mode="ios" [checked]="filters.popular"
+          >Most Popular</ion-toggle
+        >
       </ion-item>
 
       <hr style="border-bottom: 1px solid gray" />
     </ion-list>
 
     <ion-list>
-      <ion-radio-group>
+      <ion-radio-group [value]="filters.priceByOrder">
         <ion-item>
           <ion-radio mode="ios" value="lowToHigh">Low To High</ion-radio>
         </ion-item>
@@ -132,6 +138,7 @@
     <ion-list lines="none">
       <ion-item>
         <ion-range
+          [value]="filters.price"
           min="1"
           dual-knobs="true"
           max="20"
@@ -142,5 +149,9 @@
         <ion-label slot="end">1 to 5</ion-label>
       </ion-item>
     </ion-list>
+  </div>
+
+  <div class="upperBox">
+    <ion-button expand="block">Apply Filters</ion-button>
   </div>
 </ion-content>
